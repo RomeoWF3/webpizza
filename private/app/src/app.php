@@ -7,7 +7,7 @@
  */
 require_once "../private/app/config/config.php";
 /**
- * Définition de l'envirronement
+ * 2. Définition de l'envirronement
  */
 require_once "../private/app/src/environnement.php";
 /**

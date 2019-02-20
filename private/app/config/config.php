@@ -1,33 +1,35 @@
 <?php
-
 /**
- * Fichier de configuration generale de l'application 
+ * Fichier de configuration general de l'application
  * 
  * 1. Définition des constantes
- * 2. 
- * 3. 
-*/
+ * 2. Définition des variables d'environnement d'exécution
+ * 3.
+ */
 
 /**
  * 1. Définition des constantes
  */
 
-// WEBSITE_TITLE : DEfinition du titre du site
+// Definir le chemin du répertoire "utils"
+define('UTILS_PATH', "../private/app/utils/");
 
- define('WEB_SITE_TITLE', "WebPizza !");
+// WEBSITE_TITLE : Definition du titre du site
+define('WEBSITE_TITLE', "WebPizza !");
+
 
 /**
- * 2. Définition des variables d'environnemnt d'execution 
-*/
+ * 2. Définition des variables d'environnement d'exécution
+ */
 
 // Environnement de développement ou production ?
-// Les valeurs peuvent être : "prod" ou "dev"
-// Par défaut, on considère que l'application s'execute en environnment de PROD
-$env = "prod"; 
+// les valeur peuvent être : "prod" ou "dev"
+// Par défaut, on considère que l'application s'exécute en environnement de PROD
+$env = "prod";
 
-// Liste des domaines que l'on considère comme étant des environnements de développement
+// Liste des domaines que l'on considères comme étant des environnements de développement
 $dev_domains = [
     "127.0.0.1",
     "localhost",
-    "webpizza.local"
+    // "webpizza.local"
 ];

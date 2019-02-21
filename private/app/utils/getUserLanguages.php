@@ -1,29 +1,32 @@
 <?php
 /**
- * Détermine les langues de l'utilsateur
+ * Determine les langues de l'utilisateur
+ * 
  */
-if (!function_exists('getUserLanguages'))
-{ 
-    function getUserLanguages() 
+if (!function_exists('getUserLanguages')) 
+{
+    function getUserLanguages($all_languages=false) 
     {
         // On récupère la liste des langues depuis la super global $_SERVER
-       $languages_str = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+        $languages_str = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
 
-       // On converti la chaine en tableau
-       $languages_arr = explode(",", $languages_str);
+        // On converti la chaine en tableau
+        $languages_arr = explode(",", $languages_str);
 
-       dump($languages_arr);
-
-
-       // On boucle sur la liste des langues
-       foreach($languages_arr as $key => $lang)
-       {
+        // On boucle sur la liste des langues
+        foreach($languages_arr as $key => $lang) 
+        {
             $lang = explode(";", $lang);
-            $lang = $lang [0];
-            dump ( $lang );
-       }
+            $lang = $lang[0];
 
-        dump($languages_arr);
+            $languages_arr[$key] = $lang;
+        }
+
+        if ($all_languages) {
+            return $languages_arr;
+        }
+        // else {
+            return $languages_arr[0];
+        // }
     }
 }
-getUserLanguages();
